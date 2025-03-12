@@ -81,5 +81,26 @@ run clipcatd
 # Launch polkit
 run lxpolkit
 
+# Launch thunderbird
+pidof -q thunderbird || { thunderbird & }
+
+# Launch fcitx5
+pidof -q fcitx5 || { fcitx5 & }
+
+# Launch keepassxc
+pidof -q keepassxc || { keepassxc & }
+
+#Launch udiskie
+pidof -q udiskie || { udiskie -2 & }
+
+#Launch telegram
+# pidof -q telegram-desktop || { telegram-desktop & }
+
+# Launch thunar daemon
+pidof -q thunar || { thunar --daemon & }
+
+# Launch conky daemon
+# pidof -q conky || { conky --daemon & }
+
 # Start one time message
 [ ! -f "$HOME/.config/bspwm/src/config/.first_run_done" ] && alacritty --hold -e sh -c 'cat "$HOME/.config/bspwm/src/config/FirstMessage.txt"; sleep 0.1' && touch "$HOME/.config/bspwm/src/config/.first_run_done"

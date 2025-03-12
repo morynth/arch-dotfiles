@@ -11,6 +11,10 @@
 alt + F1
 	OpenApps --KeyHelp
 
+# Btop
+alt + F2
+    OpenApps --btop
+
 ############################
 # ----- Applications ----- #
 ############################
@@ -36,8 +40,8 @@ super + {b,e,f}
 	OpenApps --{browser,editor,filemanager}
 
 # Terminal apps (yazi, nvim, ncmpcpp)
-super + {y,v,m}
-	OpenApps --{yazi,nvim,music}
+super + {y,v,m,l}
+	OpenApps --{yazi,nvim,music,musicfox}
 
 # Media apps (Pavucontrol, Telegram, Whatsapp)
 super + {p,t,w}
