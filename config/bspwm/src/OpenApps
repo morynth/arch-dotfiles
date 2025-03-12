@@ -60,6 +60,12 @@ case "$1" in
 	--music)
 		Term --music
 		;;
+	--musicfox)
+		Term --musicfox
+		;;
+	--btop)
+		Term --btop
+		;;
 	--fetch)
 		Term --fetch
 		;;
