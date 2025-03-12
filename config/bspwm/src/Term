@@ -56,6 +56,12 @@ case $MY_TERM in
 			"--music")
 				alacritty --class FloaTerm,MusicTerm -e ncmpcpp
 				;;
+			"--musicfox")
+				alacritty --class FloaTerm,MusicFoxTerm -e musicfox
+				;;
+			"--btop")
+				alacritty --class FloaTerm,BtopTerm -e btop
+				;;
 			"--fetch")
 				alacritty --class FloaTerm,FetchTerm -e ~/.local/bin/sysfetch
 				;;
@@ -89,6 +95,12 @@ case $MY_TERM in
 				;;
 			"--music")
 				kitty --name=MusicTerm --class=FloaTerm -e ncmpcpp
+				;;
+			"--musicfox")
+				alacritty --class FloaTerm,MusicFoxTerm -e musicfox
+				;;
+			"--btop")
+				alacritty --class FloaTerm,BtopTerm -e btop
 				;;
 			"--fetch")
 				kitty --name=FetchTerm --class=FloaTerm -e ~/.local/bin/sysfetch

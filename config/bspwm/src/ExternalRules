@@ -45,7 +45,7 @@ case "$class" in
     Viewnior)
         result "state=floating focus=on center=on"
         ;;
-    TelegramDesktop)
+    TelegramDesktop|wechat|QQ|thunderbird)
         result "desktop=^4 follow=on"
         ;;
     pavucontrol)
@@ -54,8 +54,17 @@ case "$class" in
     Thunar)
         result "desktop=^2 follow=on"
         ;;
-    firefox|Navigator)
+    firefox|Navigator|chromium)
         result "desktop=^3 follow=on"
+        ;;
+    Thunar)
+        result "desktop=^2 follow=on"
+        ;;
+    KeePassXC|Clash-verge)
+        result "desktop=^6 follow=on"
+        ;;
+    scrcpy)
+        result "state=floating focus=on"
         ;;
 esac
 
@@ -68,6 +77,12 @@ case "$instance" in
 		;;
 	MusicTerm)
 		result "state=floating center=on rectangle=656x343+0+0"
+		;;
+	MusicFoxTerm)
+		result "state=floating center=on rectangle=656x343+0+0"
+		;;
+	BtopTerm)
+		result "state=floating center=on rectangle=500x290+1054+593"
 		;;
 	FetchTerm)
 		result "state=floating center=on rectangle=369x601+0+0"
