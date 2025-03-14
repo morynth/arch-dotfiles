@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1741694107270159-1</unique-id>
+	<command>for f in %F; do if [ -d &quot;$f&quot; ]; then exo-open --working-directory &quot;$f&quot; --launch TerminalEmulator; elif [ -z &quot;$default&quot; ]; then default=1; exo-open --launch TerminalEmulator; fi done</command>
+	<description>Example for a custom action</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>vscode</icon>
+	<name>Open vscodium here</name>
+	<submenu></submenu>
+	<unique-id>1741847357117323-1</unique-id>
+	<command>vscodium %f</command>
+	<description>当前目录打开Vscodium</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>link</icon>
+	<name>Create symlink</name>
+	<submenu></submenu>
+	<unique-id>1741847819060616-2</unique-id>
+	<command>ln -Ts %f %n&quot; (symlink)&quot;</command>
+	<description>创建软链接</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+</action>
+<action>
+	<icon>ffmulticonverter</icon>
+	<name>Convert PNGs to Webp</name>
+	<submenu></submenu>
+	<unique-id>1741848426400307-3</unique-id>
+	<command>magick %f -quality 75 &quot;$(basename %f .png).webp&quot;</command>
+	<description>PNGs转化为webp</description>
+	<range>*</range>
+	<patterns>*.png</patterns>
+	<startup-notify/>
+	<image-files/>
+</action>
+<action>
+	<icon>ffmulticonverter</icon>
+	<name>Convert JPEGs to Webp</name>
+	<submenu></submenu>
+	<unique-id>1741848936954104-4</unique-id>
+	<command>magick %f -quality 75 &quot;$(basename %f .jpg).webp&quot;</command>
+	<description>JPEGs转化为webp</description>
+	<range>*</range>
+	<patterns>*.jpg;*.JPG;*.jpeg;*.JPEG</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>bcompare</icon>
+	<name>Compare selected files/directories</name>
+	<submenu></submenu>
+	<unique-id>1741849437066514-5</unique-id>
+	<command>meld %F</command>
+	<description>比较选择的文件/文件夹</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<text-files/>
+</action>
+<action>
+	<icon>folder-move</icon>
+	<name>Move files into a new folder
+</name>
+	<submenu></submenu>
+	<unique-id>1741849677356072-6</unique-id>
+	<command>NEW_FOLDER=$(/usr/bin/zenity --entry --title &apos;Move into new folder&apos; --text &apos;Please enter a name for the new folder&apos;) &amp;&amp; mkdir &quot;$NEW_FOLDER&quot; &amp;&amp; mv %F &quot;$NEW_FOLDER&quot;</command>
+	<description>移动文件到新目录</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>cm_extractfiles</icon>
+	<name>Flatten Folder</name>
+	<submenu></submenu>
+	<unique-id>1741850914764293-8</unique-id>
+	<command>find . -mindepth 2 -type f -exec mv &quot;{}&quot; . \; &amp;&amp; find . -type d -empty -delete
+</command>
+	<description>将所有文件从子文件夹移动到父（当前）文件夹，然后删除当前文件夹中的所有空文件夹。
+</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>filename-discnumber-amarok</icon>
+	<name>Slugify Filename</name>
+	<submenu></submenu>
+	<unique-id>1741851705679560-1</unique-id>
+	<command>for file in %N; do mv &quot;$file&quot; &quot;$(echo &quot;$file&quot; | tr &apos;[:upper:]&apos; &apos;[:lower:]&apos;)&quot;; done
+</command>
+	<description>重命名当前选定的文件，使文件名变为小写并用破折号替换空格。
+</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>edit-copy</icon>
+	<name>Copy Contents to Clipboard</name>
+	<submenu></submenu>
+	<unique-id>1741851815631207-2</unique-id>
+	<command>cat &quot;%F&quot; | xclip -i -selection clipboard
+</command>
+	<description>拷贝所选文件内容到剪贴板</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
+</actions>
