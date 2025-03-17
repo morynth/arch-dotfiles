@@ -73,8 +73,7 @@
 </action>
 <action>
 	<icon>folder-move</icon>
-	<name>Move files into a new folder
-</name>
+	<name>Move files into a new folder</name>
 	<submenu></submenu>
 	<unique-id>1741849677356072-6</unique-id>
 	<command>NEW_FOLDER=$(/usr/bin/zenity --entry --title &apos;Move into new folder&apos; --text &apos;Please enter a name for the new folder&apos;) &amp;&amp; mkdir &quot;$NEW_FOLDER&quot; &amp;&amp; mv %F &quot;$NEW_FOLDER&quot;</command>
