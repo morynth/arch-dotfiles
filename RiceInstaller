@@ -404,7 +404,7 @@ install_aur_dependencies() {
     sleep 2
 
     # AUR Package List
-    aur_apps="xqp xwinwrap-0.9-bin"
+    aur_apps="xqp xwinwrap-0.9-bin musicfox linuxqq-nt-bwrap wechat-universal-bwrap espanso-x11"
 
     printf "%b\n\n" "${BLD}${CBL}Checking for required AUR packages...${CNC}"
     sleep 2
@@ -568,7 +568,7 @@ backup_existing_config() {
         fi
     fi
 
-    single_files="$HOME/.zshrc $HOME/.gtkrc-2.0 $HOME/.icons"
+    single_files="$HOME/.zshrc $HOME/.gtkrc-2.0 $HOME/.icons $HOME/.xinitrc $HOME/.xprofile"
     for item in $single_files; do
         case "$item" in
             *".icons") backup_item d "$item" ".icons" ;;
@@ -676,7 +676,7 @@ install_dotfiles() {
     fi
 
     # Copy remaining files
-    for file in "$HOME/dotfiles/home/.zshrc" "$HOME/dotfiles/home/.gtkrc-2.0" "$HOME/dotfiles/home/.icons"; do
+    for file in "$HOME/dotfiles/home/.zshrc" "$HOME/dotfiles/home/.gtkrc-2.0" "$HOME/dotfiles/home/.icons" "$HOME/dotfiles/home/.xinitrc" "$HOME/dotfiles/home/.xprofile"; do
         copy_files "$file" "$HOME/"
     done
 
@@ -744,6 +744,15 @@ configure_services() {
     else
         log_error "Failed to enable user ArchUpdates service"
         printf "%b\n\n" "${BLD}${CRE}Failed to activate user ArchUpdates service${CNC}"
+    fi
+
+    # Global Bluetooth Service
+    echo -en "${BLD}${CYE}Enabling Global bluetooth service...${CNC}\n"
+    if systemctl enable --now bluetooth.service >> "$ERROR_LOG" 2>&1; then
+        echo -en "${BLD}${CGR}Global Bluetooth service activated successfully${CNC}\n\n"
+    else
+        log_error "Failed to enable global Bluetooth service"
+        echo -en "${BLD}${CRE}Failed to activate global Bluetooth service${CNC}\n\n"
     fi
 
     # Virtual Machine Detection
