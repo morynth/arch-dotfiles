@@ -243,12 +243,14 @@ install_dependencies() {
         ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-terminus-nerd
         ttf-ubuntu-mono-nerd webp-pixbuf-loader
         # my app
-        ark alsa-utils alsa-firmware autojump chromium ntfs-3g vscodium keepassxc telegram-desktop thunderbird-i18n-zh-cn kdeconnect fcitx5-im
+        ark alsa-utils alsa-firmware autojump chromium ntfs-3g vscodium keepassxc telegram-desktop thunderbird-i18n-zh-cn kdeconnect
         fcitx5-chinese-addons fcitx5-pinyin-moegirl fcitx5-pinyin-zhwiki fcitx5-material-color pipewire pipewire-alsa pipewire-pulse pavucontrol
-        nvm python-virtualenv python-virtualenvwrapper calibre drawio-desktop-bin
+        adobe-source-han-serif-cn-fonts wqy-zenhei noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+        nvm python-virtualenv python-virtualenvwrapper calibre drawio-desktop-bin pyenv
         picard qbittorrent-enhanced timeshift btop obs-studio scrcpy lxappearance udiskie firewalld
         thunar-archive-plugin thunar-volman thunar-shares-plugin thunar-media-tags-plugin ffmpegthumbnailer
-        man-pages-zh_cn bluez bluez-utils meld refind ristretto ktimer android-tools
+        man-pages-zh_cn bluez bluez-utils meld refind ristretto ktimer android-tools ventoy
+
     )
 
     echo -e "\n${BLD}${CBL}Checking for required packages...${CNC}\n"
