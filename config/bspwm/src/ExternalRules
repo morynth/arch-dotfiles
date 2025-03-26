@@ -54,7 +54,7 @@ case "$class" in
     Thunar)
         result "desktop=^2 follow=on"
         ;;
-    firefox|Navigator|chromium)
+    firefox|Navigator|Chromium)
         result "desktop=^3 follow=on"
         ;;
     Thunar)
@@ -65,6 +65,9 @@ case "$class" in
         ;;
     scrcpy)
         result "state=floating focus=on"
+        ;;
+    qBittorrent)
+        result "desktop=^4 follow=false"
         ;;
 esac
 
