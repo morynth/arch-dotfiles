@@ -406,7 +406,7 @@ install_aur_dependencies() {
     sleep 2
 
     # AUR Package List
-    aur_apps="xqp xwinwrap-0.9-bin musicfox linuxqq-nt-bwrap wechat-universal-bwrap espanso-x11"
+    aur_apps="xqp xwinwrap-0.9-bin musicfox linuxqq-nt-bwrap wechat-universal-bwrap espanso-x11 ungoogled-chromium-bin"
 
     printf "%b\n\n" "${BLD}${CBL}Checking for required AUR packages...${CNC}"
     sleep 2
@@ -459,7 +459,7 @@ install_aur_dependencies() {
 clone_dotfiles() {
     clear
     logo "Downloading dotfiles"
-    repo_url="https://github.com/gh0stzk/dotfiles"
+    repo_url="https://github.com/morynth/arch-dotfiles"
     repo_dir="$HOME/dotfiles"
     timestamp=$(date +"%Y%m%d-%H%M%S")
     sleep 3
@@ -661,13 +661,13 @@ install_dotfiles() {
             startup_cfg="$HOME/.local/share/startup-page/config.js"
 
             if [ -f "$user_js" ]; then
-                sed "s|/home/z0mbi3|/home/$USER|g" "$user_js" > "$user_js.tmp" && \
+                sed "s|/home/morynth|/home/$USER|g" "$user_js" > "$user_js.tmp" && \
                 mv "$user_js.tmp" "$user_js" && \
                 printf "%s%sFirefox config updated!%s\n" "$BLD" "$CGR" "$CNC"
             fi
 
             if [ -f "$startup_cfg" ]; then
-                sed "s/name: 'gh0stzk'/name: '$USER'/" "$startup_cfg" > "$startup_cfg.tmp" && \
+                sed "s/name: 'morynth'/name: '$USER'/" "$startup_cfg" > "$startup_cfg.tmp" && \
                 mv "$startup_cfg.tmp" "$startup_cfg" && \
                 printf "%s%sStartup page updated!%s\n" "$BLD" "$CGR" "$CNC"
             fi
