@@ -237,7 +237,7 @@ install_dependencies() {
         ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-terminus-nerd
         ttf-ubuntu-mono-nerd webp-pixbuf-loader
         # my app
-        ark alsa-utils alsa-firmware autojump chromium ntfs-3g vscodium keepassxc telegram-desktop thunderbird-i18n-zh-cn kdeconnect
+        ark alsa-utils alsa-firmware autojump ntfs-3g vscodium keepassxc telegram-desktop thunderbird kdeconnect
         fcitx5-chinese-addons fcitx5-pinyin-moegirl fcitx5-pinyin-zhwiki fcitx5-material-color pipewire pipewire-alsa pipewire-pulse pavucontrol
         adobe-source-han-serif-cn-fonts wqy-zenhei noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
         nvm python-virtualenv python-virtualenvwrapper calibre drawio-desktop-bin pyenv
@@ -418,7 +418,7 @@ install_aur_dependencies() {
 	sleep 2
 
     # AUR Package List
-    local aur_apps=(xqp xwinwrap-0.9-bin musicfox linuxqq-nt-bwrap wechat-universal-bwrap espanso-x11)
+    local aur_apps=(xqp xwinwrap-0.9-bin musicfox linuxqq-nt-bwrap wechat-universal-bwrap espanso-x11 ungoogled-chromium-bin)
 
     echo -e "${BLD}${CBL}Checking for required AUR packages...${CNC}\n"
     sleep 2
@@ -469,7 +469,7 @@ install_aur_dependencies() {
 clone_dotfiles() {
     clear
     logo "Downloading dotfiles"
-    local repo_url="https://github.com/gh0stzk/dotfiles"
+    local repo_url="https://github.com/morynth/arch-dotfiles"
     local repo_dir="$HOME/dotfiles"
     local timestamp=$(date +%Y%m%d-%H%M%S)
     sleep 3
@@ -674,12 +674,12 @@ install_dotfiles() {
 			local startup_cfg="$HOME/.local/share/startup-page/config.js"
 
 			if [ -f "$user_js" ]; then
-				sed -i "s|/home/z0mbi3|/home/$USER|g" "$user_js" 2>> "$ERROR_LOG" && \
+				sed -i "s|/home/morynth|/home/$USER|g" "$user_js" 2>> "$ERROR_LOG" && \
 				echo -en "${BLD}${CGR}Firefox config updated!${CNC}\n"
 			fi
 
 			if [ -f "$startup_cfg" ]; then
-				sed -i "s/name: 'gh0stzk'/name: '$USER'/" "$startup_cfg" 2>> "$ERROR_LOG" && \
+				sed -i "s/name: 'morynth'/name: '$USER'/" "$startup_cfg" 2>> "$ERROR_LOG" && \
 				echo -en "${BLD}${CGR}Startup page updated!${CNC}\n"
 			fi
 		else
