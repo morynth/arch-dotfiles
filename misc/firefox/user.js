@@ -14,7 +14,7 @@ user_pref("browser.cache.memory.capacity", -1);
 user_pref("browser.startup.page", 1);
 /* set HOME+NEWWINDOW page
  * about:home=Firefox Home, custom URL, about:blank*/
-user_pref("browser.startup.homepage", "file:///home/z0mbi3/.local/share/startup-page/index.html");
+user_pref("browser.startup.homepage", "file:///home/morynth/.local/share/startup-page/index.html");
 
 
 /****************************************************************************
